@@ -1,0 +1,80 @@
+/*
+ * Colores obtenidos de:
+ *    http://www.colorcombos.com/color-schemes/7625/ColorCombo7625.html
+ *
+ */
+/***************************/
+/** Reglas para etiquetas **/
+/***************************/
+h1{
+  color:black;
+  font-size: 2em;
+}
+h3{
+  color:purple;
+  font-size: 2em;
+}/*
+p {
+  color:red;
+  //background-color: black;
+//  font-size: 8px;
+}*/
+/*
+p {
+  background-color: brown;
+}
+Strong{
+  font-weight: normal;
+  font-style: italic;
+}
+em{
+  font-style: normal;
+  font-weight: normal;
+}*//*
+#presentacion{
+  color: magenta;
+}
+.relevante{
+  background-color: purple;
+  color: red;
+}
+#presentacion .relevante{
+  background-color: blue;
+}
+ul li ul li{
+  color: green;
+}
+*/
+.glosario{
+width: 960px;
+  margin: 0px auto;
+  height: 200px;
+  background-color: pink;
+  overflow: scroll;
+  background-position: center;
+}
+.imagen{
+  width: 60%;
+  height: auto;
+  float: right;
+}
+.critica{
+  width: 40%;
+  float: left;
+  background-color: silver;
+}
+.principal{
+  background-color: brown;
+  background-position: center;
+}
+.comentarios{
+  width:960px;
+  overflow: scroll;
+  margin: 0px auto;
+  height: 200px;
+  background-color: black;
+  background-position: center;
+}
+.re{
+  background-color: silver;
+}
