@@ -7,13 +7,16 @@
 /** Reglas para etiquetas **/
 /***************************/
 h1{
-  color:black;
+  color:Navy;
   font-size: 2em;
 }
 h3{
-  color:purple;
+  color:MediumVioletRed;
   font-size: 2em;
-}/*
+}
+body{
+  background-color: Turquoise;
+  }/*
 p {
   color:red;
   //background-color: black;
@@ -49,7 +52,7 @@ ul li ul li{
 width: 960px;
   margin: 0px auto;
   height: 200px;
-  background-color: pink;
+  background-color:SkyBlue;
   overflow: scroll;
   background-position: center;
 }
@@ -64,7 +67,7 @@ width: 960px;
   background-color: silver;
 }
 .principal{
-  background-color: brown;
+  background-color: MediumSlateBlue;
   background-position: center;
 }
 .comentarios{
