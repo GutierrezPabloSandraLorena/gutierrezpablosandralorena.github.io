@@ -1,0 +1,56 @@
+body {
+  background-color: #F5F5F5;
+}
+h3{
+	color:red;
+}
+p{
+	font-size:50px;
+	color:red;
+}
+#busqueda{
+	width:300px;
+	height:150px;
+	margin:auto;
+	margin-top:20px;
+	padding:15px;
+}
+boton{
+	position:relative;
+	left:50px;
+}
+.aligning{
+	margin-left:700px;
+	margin-top:20px;
+}
+#imagebutton{
+	position:relative;
+	left:-10px;
+	top:-8px
+	margin-bottom:15px;
+}
+#resultados{
+	margin-top:50px;
+	overflow: auto;
+}
+ #response {
+	width:100%;
+      }
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+	  #map {
+ height: 450px;
+ width: 93%;
+ margin: 30px;
+
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+	  #izq{
+                float: left;
+                background: Bisque;
+            }
