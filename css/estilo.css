@@ -46,12 +46,13 @@ boton{
 	height:30px;
 }
  #response {
+	 background: Bisque;
 	/*width:100%;*/
       }
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 	  #map {
- height: auto;
+ height: 360px;
  width: 93%;
  margin: 30px;
 
