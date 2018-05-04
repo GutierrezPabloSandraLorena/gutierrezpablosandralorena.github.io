@@ -204,19 +204,7 @@ else{
 						
                 }
         });
-	/*var saveme=$.ajax({
-		type:"POST",
-		url:"codigo.php",
-		data:'query='+query,
-		dataType:"html"
-		async:false,
-		success:function(){
-			alert("Ha sido ejecutada la acción");
-		}
-	})responseText;
-	console.log(saveme);*/
 	
-	/*$.post("codigo.php",{"query":query},function(respuesta){console.log(respuesta);});*/
 }
 function localiza(item){
      var request2 = gapi.client.youtube.videos.list({
@@ -299,31 +287,12 @@ function addMarker(location,titulo) {
 			infowindow.open(map,marker);
 		}
 	})(marker));
-	//var message = [titulo+' Ubicacion: '+location];
-	//var infowindow = new google.maps.InfoWindow({
-    //content: message
-  //});
-  //marker.addListener('click', function() {
-    //infowindow.open(marker.get('map'), marker);
- // });
-  
+
     markers.push(marker);
 }
 
 
-// Attaches an info window to a marker with the provided message. When the
-// marker is clicked, the info window will open with the secret message.
-/*function message(marker, message) {
-  var infowindow = new google.maps.InfoWindow({
-    content: message
-  });
-  marker.addListener('click', function() {
-    infowindow.open(marker.get('map'), marker);
-  });
-  markers.push(marker);
-}
-*/
-      // Sets the map on all markers in the array.
+
 function setMapOnAll(map) {
 	console.log("show1");
     for (var i = 0; i < markers.length; i++) {
@@ -427,13 +396,7 @@ function addMarkerTwitter(location,titulo,imagen) {
 			infowindow.open(map,marker);
 		}
 	})(marker));
-	//var message = [titulo+' Ubicacion: '+location];
-	//var infowindow = new google.maps.InfoWindow({
-    //content: message
-  //});
-  //marker.addListener('click', function() {
-    //infowindow.open(marker.get('map'), marker);
- // });
+
   
     markers.push(marker);
 }
