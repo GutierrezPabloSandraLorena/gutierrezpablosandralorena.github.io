@@ -346,39 +346,13 @@ function deleteMarkers() {
 }
 
 function mostrarTwitter(response){
-console.log(response);
+console.log(reshttps://mashup-sandra.herokuapp.com/ponse);
 console.log("si mostrar "+response.statuses.length);
 
-/*$.each(response, function (index, tweet) {
-						$tweets = $('.tweet').first().clone();
 
-						$tweets.find('.img').attr('src',tweet.statuses[i].user.profile_background_image_url);
-						$tweets.find('.name').text(tweet.statuses[i].user.screen_name);
-						$tweets.find('.username').html("<a target='blank_' href='http://twitter.com/"+tweet.screen_name+"'>"+tweet.screen_name+"</a>");
-						$tweets.find('.date').text((tweet.statuses[i].user.created_at).substring(0, (tweet.statuses[i].user.created_at).length - 5));
-						$tweets.find('.text').text(tweet.statuses[i].text);
-
-						
-						//url_imagen=response.statuses[i].user.profile_background_image_url;
-			/*screen_name =response.statuses[i].user.screen_name;
-			
-			fecha = "<center><h4>"+response.statuses[i].user.created_at+"</h4>";
-			texto ="<center><h4>"+response.statuses[i].text+"</h4>";
-			name = "<a href='https://twitter.com/"+screen_name+"' target=_blank>@"+screen_name+"</a>";
-			
-			imagen ="<center><h4>"+name+" <a href='https://twitter.com/"+screen_name+"' target=_blank><img width='30px' height='30px' src="+url_imagen+"></img></a></h4>";
-            console.log("texto"+texto);
-						
-						$tweets.hide().appendTo('#tweets').fadeIn();
-
-					})*/
 for (var i = 0; i <=response.statuses.length; i++) {
 	console.log("si for");
- // var texto = '<img style="width:30px; height: 30px" src= "'+ response.statuses[i].user.profile_background_image_url + '"class="circle">' + response.statuses[i].text
-  //var a=document.getElementById("tweet");
-  //texto.appendTo("a");
-  
-  
+
   var t=document.getElementById("tweet");
 			t.setAttribute("backgroundColor", "Bisque");
 			
@@ -393,55 +367,14 @@ for (var i = 0; i <=response.statuses.length; i++) {
 			
 			imagen ="<center><h4>"+name+" <a href='https://twitter.com/"+screen_name+"' target=_blank><img width='50px' height='50px' src="+url_imagen+"></img></a></h4>";
             console.log("texto"+texto);
-			 tt='<div id="tw" class="container col s6 l12">'+fecha+''+imagen+'name'+name+''+texto+'</div>';
+			 tt='<div class="container col s12 l12">'+fecha+''+imagen+'name'+name+''+texto+'</div>';
 			
 			tweetagregar="<div class=tweet><img class=img src="+response.statuses[i].user.profile_background_image_url+"/><div class=info><p class=user>"+name+"<span class=name></span><span class=username>"+response.statuses[i].user.screen_name+"</span>"+
 					"<span class=date>"+response.statuses[i].user.created_at+"</span>"+
 				"</p><p class=text>"+response.statuses[i].text+"</p></div></div>";
-			//$user->user->profile_image_url;
-			//for(i=0;i<datos.items.length;i++){
-				//var i=0;
-				//while (i<num1 && i<10){
-					//var texto = '<img style="width:30px; height: 30px" src= "'+ response.statuses[i].user.profile_background_image_url + '"class="circle">' + response.statuses[i].text
-  
-				/*titulo="<center><h4>"+datos.items[i].volumeInfo.title+"</h4>";
-				subtitulo="<h6>"+datos.items[i].volumeInfo.subtitle+"</h6>";
-				autor="<h5> Autor:"+ datos.items[i].volumeInfo.authors + "</h5>";*/
-				
-				/*tweet.innerHTML+=fecha;
-				tweet.innerHTML+=imagen;
-				tweet.innerHTML+=name;
-				tweet.innerHTML+=texto;
-				*/
+			
 				tweet.innerHTML+=tt;
-				//tweet1.innerHTML+=tweetagregar;
-				//console.log(subtitulo);
-				/*if(datos.items[i].volumeInfo.subtitle!=""){
-				resultados.innerHTML+=subtitulo;
-				}
-				resultados.innerHTML+=autor;
-				//descripcion="<p>"+datos.items[i].volumeInfo.searchInfo+"</p>";
-				//resultados.innerHTML+=descripcion;
-					boton="<a href="+datos.items[i].volumeInfo.infoLink + "><button id=imagebutton class=btn red aligning>Detalles</button></a>";					
-					if(datos.items[i].volumeInfo.imageLinks){
-						url=datos.items[i].volumeInfo.imageLinks.thumbnail;
-						img="<img src="+url+"></center>"
-						resultados.innerHTML+=img;
-					}
-					resultados.innerHTML+=boton;*/
-					//i++;
-			//}
-						
-						//$('a').attr('current',$('input').val());
-					/*$fecha = $user->created_at;
-            $url_imagen = $user->user->profile_image_url;
-            $screen_name = $user->user->screen_name;
-            $tweet = $user->text;
-
-            $imagen = "<a href='https://twitter.com/".$screen_name."' target=_blank><img src=".$url_imagen."></img></a>";
-            $name = "<a href='https://twitter.com/".$screen_name."' target=_blank>@".$screen_name."</a>";
-	*/
-						
+				
   
   
   if(response.statuses[i].geo !== undefined && response.statuses[i].geo !== null){
