@@ -251,7 +251,7 @@ function localiza(item){
 	 // <div class="video-container">  width='+ancho+'px height='+alto+'px  
 	  
     ide=item.id.videoId;   
-     salida='<div id="izq" ><iframe class="video-container" width='+ancho+'px height='+alto+'px src=\"//www.youtube.com/embed/'+item.id.videoId+'\" allowfullscreen></iframe></br>CANAL: '+item.snippet.channelTitle+'<br />FECHA DE PUBLICACION: '+item.snippet.publishedAt.substr(0, 9)+'<br /> Ubicación: '+ub+' </div>';
+     salida='<div id="izq"class="video-container" ><iframe  width='+ancho+'px height='+alto+'px src=\"//www.youtube.com/embed/'+item.id.videoId+'\" allowfullscreen></iframe></br>CANAL: '+item.snippet.channelTitle+'<br />FECHA DE PUBLICACION: '+item.snippet.publishedAt.substr(0, 9)+'<br /> Ubicación: '+ub+' </div>';
       $("#response").append(salida);       
 		if(response1.result.items[0].recordingDetails){
 			console.log("item mapa"+response1.result.items[0].recordingDetails);
