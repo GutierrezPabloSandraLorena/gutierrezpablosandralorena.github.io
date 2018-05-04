@@ -9,11 +9,19 @@ p{
 	color:red;
 }
 #busqueda{
-	width:300px;
-	height:150px;
+	/*width:300px;
+	height:150px;*/
 	margin:auto;
 	margin-top:20px;
 	padding:15px;
+}
+#tw{
+	width:100px;
+	height:70px;
+	margin:auto;
+	margin-top:20px;
+padding:15px;
+background-color: blue;
 }
 boton{
 	position:relative;
@@ -30,16 +38,20 @@ boton{
 	margin-bottom:15px;
 }
 #resultados{
-	margin-top:50px;
-	overflow: auto;
+	/*margin-top:50px;*/
+	/*overflow: auto;*/
+}
+#imagen{
+	width:30px;
+	height:30px;
 }
  #response {
-	width:100%;
+	/*width:100%;*/
       }
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 	  #map {
- height: 450px;
+ height: auto;
  width: 93%;
  margin: 30px;
 
@@ -51,6 +63,6 @@ boton{
         padding: 0;
       }
 	  #izq{
-                float: left;
+                /*float: left;*/
                 background: Bisque;
             }

@@ -1,5 +1,5 @@
 var map;
-      function initMap() {
+function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 21.1825522, lng: -99.7062614},
           zoom: 3
@@ -58,6 +58,7 @@ function busquedaLibro(dir,dir2){
 	
 	markers=[];
 	document.getElementById('resultados').innerHTML="";
+	document.getElementById('tweet').innerHTML="";
 	document.getElementById('response').innerHTML="";
 	document.getElementById('map').innerHTML="";
 	
@@ -85,21 +86,27 @@ function busquedaLibro(dir,dir2){
 				titulo="<center><h4>"+datos.items[i].volumeInfo.title+"</h4>";
 				subtitulo="<h6>"+datos.items[i].volumeInfo.subtitle+"</h6>";
 				autor="<h5> Autor:"+ datos.items[i].volumeInfo.authors + "</h5>";
-				resultados.innerHTML+=titulo;
+				//resultados.innerHTML+=titulo;
+				libro='<div class="col s3">'+titulo;
 				//console.log(subtitulo);
 				if(datos.items[i].volumeInfo.subtitle!=""){
-				resultados.innerHTML+=subtitulo;
+				//resultados.innerHTML+=subtitulo;
+				libro+=subtitulo;
 				}
-				resultados.innerHTML+=autor;
+				libro+=autor;
+				//resultados.innerHTML+=autor;
 				//descripcion="<p>"+datos.items[i].volumeInfo.searchInfo+"</p>";
 				//resultados.innerHTML+=descripcion;
-					boton="<a href="+datos.items[i].volumeInfo.infoLink + "><button id=imagebutton class=btn red aligning>Detalles</button></a>";					
+					boton="<center><a href="+datos.items[i].volumeInfo.infoLink + "><button id=imagebutton class=btn red aligning >Detalles</button></a></center>";					
 					if(datos.items[i].volumeInfo.imageLinks){
 						url=datos.items[i].volumeInfo.imageLinks.thumbnail;
-						img="<img src="+url+"></center>"
-						resultados.innerHTML+=img;
+						img="<img class=responsive-img src="+url+"></center>"
+						//resultados.innerHTML+=img;
+						libro+=img;
 					}
-					resultados.innerHTML+=boton;
+					libro+=boton+"</div>";
+					//resultados.innerHTML+=boton;
+					resultados.innerHTML+=libro;
 					i++;
 			}
 			if(datos.nextPageToken){
@@ -144,6 +151,7 @@ function search(dir) {
 // Triggered by this line: request.execute(onSearchResponse);
 function onSearchResponse(response) {
 	var num=document.getElementById('num').value;
+	var query=document.getElementById('query').value;
    // var responseString = JSON.stringify(response, '', 2);
     //document.getElementById('response').innerHTML = responseString;
 	if(response.nextPageToken && num>10){
@@ -176,10 +184,39 @@ function onSearchResponse(response) {
              });
 	//google.maps.event.addDomListener(window,'load',showMarkers);
 	if(markers.length>=1) 
-	{showMarkers();}
+	{
+		showMarkers();
+		}
 else{
 	initMap();
-}
+}	
+
+	$.ajax({
+                data:  {"query":query},
+                url:   'codigo.php',
+                type:  'post',
+                success:  function (response) {
+                        $("#datos").html(response);
+                        var respuesta = JSON.parse(response);
+                        console.log(respuesta);
+                        mostrarTwitter(respuesta);
+						
+						
+                }
+        });
+	/*var saveme=$.ajax({
+		type:"POST",
+		url:"codigo.php",
+		data:'query='+query,
+		dataType:"html"
+		async:false,
+		success:function(){
+			alert("Ha sido ejecutada la acción");
+		}
+	})responseText;
+	console.log(saveme);*/
+	
+	/*$.post("codigo.php",{"query":query},function(respuesta){console.log(respuesta);});*/
 }
 function localiza(item){
      var request2 = gapi.client.youtube.videos.list({
@@ -211,10 +248,10 @@ function localiza(item){
         latitud=response1.result.items[0].recordingDetails.location.latitude;
         ub=longitud+','+latitud;
       }
-	  
+	 // <div class="video-container">  width='+ancho+'px height='+alto+'px  
 	  
     ide=item.id.videoId;   
-     salida='<div id="izq"><iframe width='+ancho+'px height='+alto+'px src=\"//www.youtube.com/embed/'+item.id.videoId+'\" allowfullscreen></iframe></br>CANAL: '+item.snippet.channelTitle+'<br />FECHA DE PUBLICACION: '+item.snippet.publishedAt.substr(0, 9)+'<br /> Ubicación: '+ub+' </div>';
+     salida='<div id="izq" class="video-container"><iframe src=\"//www.youtube.com/embed/'+item.id.videoId+'\" allowfullscreen></iframe></br>CANAL: '+item.snippet.channelTitle+'<br />FECHA DE PUBLICACION: '+item.snippet.publishedAt.substr(0, 9)+'<br /> Ubicación: '+ub+' </div>';
       $("#response").append(salida);       
 		if(response1.result.items[0].recordingDetails){
 			console.log("item mapa"+response1.result.items[0].recordingDetails);
@@ -231,7 +268,7 @@ function localiza(item){
 	
 	
  });
- 
+	
 }
 function marcador(lat2,long2,titulo){
   console.log("si");
@@ -246,19 +283,29 @@ function marcador(lat2,long2,titulo){
       // Adds a marker to the map and push to the array.
 function addMarker(location,titulo) {
 	console.log("location");
+	var message = [titulo+' Ubicacion: '+location];
+	var infowindow=new google.maps.InfoWindow();
+	
     var marker = new google.maps.Marker({
           position: location,
-	map: map,
+		map: map,
 	center:location,
 		  title:'titulo'
     });
-	var message = [titulo+' Ubicacion: '+location];
-	var infowindow = new google.maps.InfoWindow({
-    content: message
-  });
-  marker.addListener('click', function() {
-    infowindow.open(marker.get('map'), marker);
-  });
+	
+	google.maps.event.addListener(marker,'click',(function(marker){
+		return function(){
+			infowindow.setContent(mensaje);
+			infowindow.open(map,marker);
+		}
+	})(marker));
+	//var message = [titulo+' Ubicacion: '+location];
+	//var infowindow = new google.maps.InfoWindow({
+    //content: message
+  //});
+  //marker.addListener('click', function() {
+    //infowindow.open(marker.get('map'), marker);
+ // });
   
     markers.push(marker);
 }
@@ -297,4 +344,166 @@ function deleteMarkers() {
     clearMarkers();
     markers = [];
 }
+
+function mostrarTwitter(response){
+console.log(response);
+console.log("si mostrar "+response.statuses.length);
+
+/*$.each(response, function (index, tweet) {
+						$tweets = $('.tweet').first().clone();
+
+						$tweets.find('.img').attr('src',tweet.statuses[i].user.profile_background_image_url);
+						$tweets.find('.name').text(tweet.statuses[i].user.screen_name);
+						$tweets.find('.username').html("<a target='blank_' href='http://twitter.com/"+tweet.screen_name+"'>"+tweet.screen_name+"</a>");
+						$tweets.find('.date').text((tweet.statuses[i].user.created_at).substring(0, (tweet.statuses[i].user.created_at).length - 5));
+						$tweets.find('.text').text(tweet.statuses[i].text);
+
+						
+						//url_imagen=response.statuses[i].user.profile_background_image_url;
+			/*screen_name =response.statuses[i].user.screen_name;
+			
+			fecha = "<center><h4>"+response.statuses[i].user.created_at+"</h4>";
+			texto ="<center><h4>"+response.statuses[i].text+"</h4>";
+			name = "<a href='https://twitter.com/"+screen_name+"' target=_blank>@"+screen_name+"</a>";
+			
+			imagen ="<center><h4>"+name+" <a href='https://twitter.com/"+screen_name+"' target=_blank><img width='30px' height='30px' src="+url_imagen+"></img></a></h4>";
+            console.log("texto"+texto);
+						
+						$tweets.hide().appendTo('#tweets').fadeIn();
+
+					})*/
+for (var i = 0; i <=response.statuses.length; i++) {
+	console.log("si for");
+ // var texto = '<img style="width:30px; height: 30px" src= "'+ response.statuses[i].user.profile_background_image_url + '"class="circle">' + response.statuses[i].text
+  //var a=document.getElementById("tweet");
+  //texto.appendTo("a");
+  
+  
+  var t=document.getElementById("tweet");
+			t.setAttribute("backgroundColor", "Bisque");
+			
+			//imagen = '<img style="width:30px; height: 30px" src= "'+ response.statuses[i].user.profile_background_image_url;
+			
+			url_imagen=response.statuses[i].user.profile_background_image_url;
+			screen_name =response.statuses[i].user.screen_name;
+			
+			fecha = "<center><h4>"+response.statuses[i].user.created_at+"</h4>";
+			texto ="<center><h4>"+response.statuses[i].text+"</h4>";
+			name = "<a href='https://twitter.com/"+screen_name+"' target=_blank>@"+screen_name+"</a>";
+			
+			imagen ="<center><h4>"+name+" <a href='https://twitter.com/"+screen_name+"' target=_blank><img width='50px' height='50px' src="+url_imagen+"></img></a></h4>";
+            console.log("texto"+texto);
+			 tt='<div id="tw" class="container col s6 l12">'+fecha+''+imagen+'name'+name+''+texto+'</div>';
+			
+			tweetagregar="<div class=tweet><img class=img src="+response.statuses[i].user.profile_background_image_url+"/><div class=info><p class=user>"+name+"<span class=name></span><span class=username>"+response.statuses[i].user.screen_name+"</span>"+
+					"<span class=date>"+response.statuses[i].user.created_at+"</span>"+
+				"</p><p class=text>"+response.statuses[i].text+"</p></div></div>";
+			//$user->user->profile_image_url;
+			//for(i=0;i<datos.items.length;i++){
+				//var i=0;
+				//while (i<num1 && i<10){
+					//var texto = '<img style="width:30px; height: 30px" src= "'+ response.statuses[i].user.profile_background_image_url + '"class="circle">' + response.statuses[i].text
+  
+				/*titulo="<center><h4>"+datos.items[i].volumeInfo.title+"</h4>";
+				subtitulo="<h6>"+datos.items[i].volumeInfo.subtitle+"</h6>";
+				autor="<h5> Autor:"+ datos.items[i].volumeInfo.authors + "</h5>";*/
+				
+				/*tweet.innerHTML+=fecha;
+				tweet.innerHTML+=imagen;
+				tweet.innerHTML+=name;
+				tweet.innerHTML+=texto;
+				*/
+				tweet.innerHTML+=tt;
+				//tweet1.innerHTML+=tweetagregar;
+				//console.log(subtitulo);
+				/*if(datos.items[i].volumeInfo.subtitle!=""){
+				resultados.innerHTML+=subtitulo;
+				}
+				resultados.innerHTML+=autor;
+				//descripcion="<p>"+datos.items[i].volumeInfo.searchInfo+"</p>";
+				//resultados.innerHTML+=descripcion;
+					boton="<a href="+datos.items[i].volumeInfo.infoLink + "><button id=imagebutton class=btn red aligning>Detalles</button></a>";					
+					if(datos.items[i].volumeInfo.imageLinks){
+						url=datos.items[i].volumeInfo.imageLinks.thumbnail;
+						img="<img src="+url+"></center>"
+						resultados.innerHTML+=img;
+					}
+					resultados.innerHTML+=boton;*/
+					//i++;
+			//}
+						
+						//$('a').attr('current',$('input').val());
+					/*$fecha = $user->created_at;
+            $url_imagen = $user->user->profile_image_url;
+            $screen_name = $user->user->screen_name;
+            $tweet = $user->text;
+
+            $imagen = "<a href='https://twitter.com/".$screen_name."' target=_blank><img src=".$url_imagen."></img></a>";
+            $name = "<a href='https://twitter.com/".$screen_name."' target=_blank>@".$screen_name."</a>";
+	*/
+						
+  
+  
+  if(response.statuses[i].geo !== undefined && response.statuses[i].geo !== null){
+    if(response.statuses[i].geo.coordinates){
+       console.log(response.statuses[i].geo.coordinates);
+       marcadorTwitter(response.statuses[i].geo.coordinates[0],response.statuses[i].geo.coordinates[1], texto,"https://icon-icons.com/icons2/730/PNG/32/twitter_icon-icons.com_62765.png");
+      }else{
+    console.log("No tiene");
+      }
+    }else{
+    console.log("No tiene");
+  }
+}
+showMarkers();
+}
+function marcadorTwitter(lat2,long2,titulo,imagen){
+  console.log("si");
+  var pos= {lat: lat2, lng: long2};
+		console.log("pos");
+		map.addListener('click', function(event) {
+          addMarker(event.latLng);
+        });
+		addMarker(pos,titulo,imagen);
+}
+
+      // Adds a marker to the map and push to the array.
+function addMarkerTwitter(location,titulo,imagen) {
+	console.log("location");
+	var message = titulo+" Ubicacion: "+location+"<img src="+imagen+"/>";
+	var infowindow=new google.maps.InfoWindow();
+	
+    var marker = new google.maps.Marker({
+          position: location,
+		map: map,
+	center:location,
+		  title:'titulo'
+		  /*icon:{
+			  path:google.maps.SymbolPath.CIRCLE,
+			  scale:10,
+			  strokeColor:'#f00',
+			  strokeWeight:5,
+			  fillColor: '#00f',
+			  fillOpacity:1
+		  }*/
+    });
+	
+	google.maps.event.addListener(marker,'click',(function(marker){
+		return function(){
+			infowindow.setContent(mensaje);
+			infowindow.open(map,marker);
+		}
+	})(marker));
+	//var message = [titulo+' Ubicacion: '+location];
+	//var infowindow = new google.maps.InfoWindow({
+    //content: message
+  //});
+  //marker.addListener('click', function() {
+    //infowindow.open(marker.get('map'), marker);
+ // });
+  
+    markers.push(marker);
+}
+
+
 
