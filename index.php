@@ -18,22 +18,6 @@
 		<title>MASHUP</title>
     </head>
     <body>
-	<!--<div class="container" style="text-align: center">	
-	<div class="row">
-	 <div class="col s6 l12" >
-			<div class="search" style="text-align: center"> 
-				<h3>BÚSQUEDA DE LIBROS/VIDEOS/MAPA </br>BOOKS+YOUTUBE+MAPS API GOOGLE<h3>
-				
-			 <!--<div id="busqueda" class="#f5f5f5 grey lighten-4 z-depth-5">
-			<input id="query" placeholder="Ingresa palabra a buscar" class="input-field col s6 l12" value="" type="text" required/>
-			<input id="num" value="" class="input-field col s6 l12" placeholder="Número de resultados" required type="number"/>
-			<button id="boton" type="button" class="btn waves-effect waves-light purple" onclick="busquedaLibro('','')">Search</button>
-			<!--</div>
-			</div>
-		</div>
-		</div>
-		</div>
-		-->
 		<div class="input-field col s3 m12 l12">
 		<center>
 		<h3>BÚSQUEDA DE LIBROS/VIDEOS/MAPA </br>BOOKS+YOUTUBE+MAPS API GOOGLE<h3>
