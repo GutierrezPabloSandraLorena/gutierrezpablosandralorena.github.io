@@ -68,7 +68,7 @@
 		
     <div class="container col s6 l12" id="map"></div>
 		
-		<div class="container col s6 l12" >
+		<div class="container col s12 l12" >
 			<div class="row" id="tweet">
 		</div>
 		</div>
