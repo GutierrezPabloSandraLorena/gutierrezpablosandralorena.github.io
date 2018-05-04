@@ -350,12 +350,7 @@ for (var i = 0; i <=response.statuses.length; i++) {
     if(response.statuses[i].geo.coordinates){
        console.log(response.statuses[i].geo.coordinates);
        marcadorTwitter(response.statuses[i].geo.coordinates[0],response.statuses[i].geo.coordinates[1], texto,"https://icon-icons.com/icons2/730/PNG/32/twitter_icon-icons.com_62765.png");
-      }else{
-    console.log("No tiene");
       }
-    }else{
-    console.log("No tiene");
-  }
 }
 showMarkers();
 }
