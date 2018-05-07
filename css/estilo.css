@@ -23,6 +23,11 @@ p{
 padding:15px;
 background-color: blue;
 }
+#tweet{
+ border-style:solid;
+border:1px;
+border-color:#FFFFFF;
+}
 boton{
 	position:relative;
 	left:50px;
