@@ -80,9 +80,9 @@ boton{
             }
 #otro{
 	border: black 1px dotted; 
-	border-top-width: 10px;
-  border-right-width: 1em;
+	/*border-top-width: 10px;
+  border-right-width: 1em; double;
   border-bottom-width: thick;
-  border-left-width: thin;
+  border-left-width: thin;*/
 	background-color:#97eaf1;
 }
