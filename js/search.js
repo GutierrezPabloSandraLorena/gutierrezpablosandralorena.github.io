@@ -383,8 +383,9 @@ for (var i = 0; i <=response.statuses.length; i++) {
 			t.setAttribute("backgroundColor", "Bisque");
 			
 			//imagen = '<img style="width:30px; height: 30px" src= "'+ response.statuses[i].user.profile_background_image_url;
-			
-			url_imagen=response.statuses[i].user.profile_background_image_url;
+			url_imagen="";
+	if(response.statuses[i].user.profile_background_image_url){
+			url_imagen=response.statuses[i].user.profile_background_image_url;}
 			screen_name =response.statuses[i].user.screen_name;
 			
 			fecha = "<center><h4>"+response.statuses[i].user.created_at+"</h4>";
