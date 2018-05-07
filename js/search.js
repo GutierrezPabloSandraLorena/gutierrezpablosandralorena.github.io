@@ -384,7 +384,7 @@ for (var i = 0; i <=response.statuses.length; i++) {
 			
 			//imagen = '<img style="width:30px; height: 30px" src= "'+ response.statuses[i].user.profile_background_image_url;
 			url_imagen="";
-	if(response.statuses[i].user.profile_background_image_url){
+	if(response.statuses[i].user.profile_background_image_url!="undefined"){
 			url_imagen=response.statuses[i].user.profile_background_image_url;}
 			screen_name =response.statuses[i].user.screen_name;
 			
@@ -394,7 +394,7 @@ for (var i = 0; i <=response.statuses.length; i++) {
 			
 			imagen ="<center><h4>"+name+" <a href='https://twitter.com/"+screen_name+"' target=_blank><img width='50px' height='50px' src="+url_imagen+"></img></a></h4>";
             console.log("texto"+texto);
-			 tt='<div id="tweet" class="container col s12 l12">'+fecha+''+imagen+'name'+name+''+texto+'</div>';
+			 tt='<div class="col s3">'+fecha+''+imagen+'name'+name+''+texto+'</div>';
 			
 			tweetagregar="<div class=tweet><img class=img src="+response.statuses[i].user.profile_background_image_url+"/><div class=info><p class=user>"+name+"<span class=name></span><span class=username>"+response.statuses[i].user.screen_name+"</span>"+
 					"<span class=date>"+response.statuses[i].user.created_at+"</span>"+
