@@ -78,8 +78,11 @@ boton{
                 /*float: left;*/
                 background: Bisque;
             }
-#otro{border: red 5px dotted; border-top-width: 10px;
+#otro{
+	border: black 1px dotted; 
+	border-top-width: 10px;
   border-right-width: 1em;
   border-bottom-width: thick;
   border-left-width: thin;
-	background-color: #33f0ff;}
+	background-color:#97eaf1;
+}
