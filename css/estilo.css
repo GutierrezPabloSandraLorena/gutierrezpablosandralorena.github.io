@@ -24,9 +24,10 @@ padding:15px;
 background-color: blue;
 }
 #tweet{
- border-style:solid;
+ /*border-style:solid;
 border:1px;
-border-color:#FFFFFF;
+border-color:#FFFFFF;*/
+	border: 1px solid #FFF;
 }
 boton{
 	position:relative;
