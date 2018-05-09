@@ -21,38 +21,27 @@ var nextpageY="";
 var prevpageL="";
 var prevpageY="";
 var markers = [];
-
-function nextPage(){
-	dir= "https://www.googleapis.com/books/v1/volumes?maxResults=10&pageToken="+nextpageL+"q=" + palabra1+"&maxResults=10&key=AIzaSyDe4GeE6Tdv4rVz3BR7dv1QC35HMsOoTJQ";
-	dir2=gapi.client.youtube.search.list({
-        //part: 'snippet',
-        //q:query		
-		part:"snippet",
-			type:"video",
-			q:query,
-			pageToken:nextpageY,
-			maxResults:"10",
-			order:"viewCount",
-			publishedAfter:"2015-01-01T00:00:00Z"
-    });
-	
-	busquedaLibro(dir,dir2);
+var palabra1="";
+var video_s=[];
+var video_a=[];
+function siguiente(){
+	$("#response").html("");
+for(var d=0;d<10;d++){
+	var qw=video_s.pop();
+	console.log(qw);
+	$("#response").append(qw);
+video_a.push(qw);
 }
-function prevPage(){
-	dir= "https://www.googleapis.com/books/v1/volumes?maxResults=10&pageToken="+prevpageL+"q=" + palabra1+"&maxResults=10&key=AIzaSyDe4GeE6Tdv4rVz3BR7dv1QC35HMsOoTJQ";
-	dir2=gapi.client.youtube.search.list({
-        //part: 'snippet',
-        //q:query		
-		part:"snippet",
-			type:"video",
-			q:query,
-			pageToken:prevpageY,
-			maxResults:"10",
-			order:"viewCount",
-			publishedAfter:"2015-01-01T00:00:00Z"
-    });
 	
-	busquedaLibro(dir,dir2);
+}
+function anterior(){
+	$("#response").html("");
+for(var d=0;d<10;d++){
+	var qw=video_a.pop();
+	$("#response").append(qw);
+video_s.push(qw);
+}
+	
 }
 function busquedaLibro(dir,dir2){
 	
@@ -63,15 +52,16 @@ function busquedaLibro(dir,dir2){
 	document.getElementById('map').innerHTML="";
 	
 	console.log(document.getElementById('query').value);
-	var palabra1=document.getElementById('query').value;
+	palabra1=document.getElementById('query').value;
 	var num1=document.getElementById('num').value;
 	
 	console.log(palabra1);
 
-	if(dir=="")
-	{
+	//if(dir=="")
+	//{
 		dir= "https://www.googleapis.com/books/v1/volumes?maxResults=10&q=" + palabra1+"&key=AIzaSyDe4GeE6Tdv4rVz3BR7dv1QC35HMsOoTJQ";
-	}
+	//}
+	console.log(dir);
 	$.ajax({
 		url:dir,
 		dataType: "json",
@@ -87,7 +77,7 @@ function busquedaLibro(dir,dir2){
 				subtitulo="<h6>"+datos.items[i].volumeInfo.subtitle+"</h6>";
 				autor="<h5> Autor:"+ datos.items[i].volumeInfo.authors + "</h5>";
 				//resultados.innerHTML+=titulo;
-				libro='<div class="col s3">'+titulo;
+				libro='<div class="col s3 m3 6">'+titulo;
 				//console.log(subtitulo);
 				if(datos.items[i].volumeInfo.subtitle!=""){
 				//resultados.innerHTML+=subtitulo;
@@ -109,17 +99,6 @@ function busquedaLibro(dir,dir2){
 					resultados.innerHTML+=libro;
 					i++;
 			}
-			if(datos.nextPageToken){
-			nextpageL=datos.nextPageToken;
-			console.log("nextpage: "+nextpage);
-			document.getElementById("next").disabled=false;
-			}
-			else{document.getElementById("next").disabled=true;}
-			if(datos.prevPageToken){
-			prevpageL=datos.nextPageToken;
-			console.log("nextpage: "+nextpage);
-			document.getElementById("prev").disabled=false;
-			}else{document.getElementById("prev").disabled=true;}
 		},
 		type: 'GET'
 	});
@@ -128,23 +107,20 @@ function busquedaLibro(dir,dir2){
 
 // Called when the search button is clicked in the html code
 function search(dir) {
+	//document.getElementById("next").disabled=true;
     var query = document.getElementById('query').value;
 	var num = document.getElementById('num').value;
     // Use the JavaScript client library to create a search.list() API call.
-	var request;
-    if(dir==""){
-		 request = gapi.client.youtube.search.list({
+	var request = gapi.client.youtube.search.list({
         //part: 'snippet',
         //q:query		
 		part:"snippet",
 			type:"video",
 			q:query,
-			maxResults:"10",
+			maxResults:num,
 			order:"viewCount",
 			publishedAfter:"2015-01-01T00:00:00Z"
-   });
-	}else
-		request = dir;
+   })
     // Send the request to the API server, call the onSearchResponse function when the data is returned
     request.execute(onSearchResponse);
 }
@@ -152,35 +128,11 @@ function search(dir) {
 function onSearchResponse(response) {
 	var num=document.getElementById('num').value;
 	var query=document.getElementById('query').value;
-   // var responseString = JSON.stringify(response, '', 2);
-    //document.getElementById('response').innerHTML = responseString;
-	if(response.nextPageToken && num>10){
-			nextpageY=response.nextPageToken;
-			console.log("nextpageY: "+nextpageY);
-			document.getElementById("next").disabled=false;
-			console.log("nextpageY: "+nextpageY);
-	}
-	else{
-		document.getElementById("next").disabled=true;
-		
-	}
-	if(response.prevPageToken&& num>10){
-			prevpageY=response.nextPageToken;
-			console.log("prevpageY: "+prevpageY);
-			document.getElementById("prev").disabled=false;
-	}else{
-		document.getElementById("prev").disabled=true;
-	}
-	
 	var results = response.result;
 	var n=0;
-	
             $.each(results.items, function(index, item) {
-            //console.log(item);
-             if(n<num){
 			 localiza(item);
-			 
-			 }n++;
+
              });
 	//google.maps.event.addDomListener(window,'load',showMarkers);
 	if(markers.length>=1) 
@@ -199,24 +151,10 @@ else{
                         $("#datos").html(response);
                         var respuesta = JSON.parse(response);
                         console.log(respuesta);
-                        mostrarTwitter(respuesta);
-						
-						
+                        mostrarTwitter(respuesta);	
                 }
         });
-	/*var saveme=$.ajax({
-		type:"POST",
-		url:"codigo.php",
-		data:'query='+query,
-		dataType:"html"
-		async:false,
-		success:function(){
-			alert("Ha sido ejecutada la acciÃ³n");
-		}
-	})responseText;
-	console.log(saveme);*/
 	
-	/*$.post("codigo.php",{"query":query},function(respuesta){console.log(respuesta);});*/
 }
 function localiza(item){
      var request2 = gapi.client.youtube.videos.list({
@@ -248,11 +186,12 @@ function localiza(item){
         latitud=response1.result.items[0].recordingDetails.location.latitude;
         ub=longitud+','+latitud;
       }
-	 // <div class="video-container">  width='+ancho+'px height='+alto+'px  
+	 // <div class="video-container">  width='+ancho+'px height='+alto+'px  class="video-container"
 	  
     ide=item.id.videoId;   
-     salida='<div id="izq"class="video-container" ><iframe  width='+ancho+'px height='+alto+'px src=\"//www.youtube.com/embed/'+item.id.videoId+'\" allowfullscreen></iframe></br>CANAL: '+item.snippet.channelTitle+'<br />FECHA DE PUBLICACION: '+item.snippet.publishedAt.substr(0, 9)+'<br /> UbicaciÃ³n: '+ub+' </div>';
-      $("#response").append(salida);       
+     salida='<div id="izq" class="col s3 m3 3"><iframe  width='+ancho+'px height='+alto+'px src=\"//www.youtube.com/embed/'+item.id.videoId+'\" allowfullscreen></iframe></br>CANAL: '+item.snippet.channelTitle+'<br />FECHA DE PUBLICACION: '+item.snippet.publishedAt.substr(0, 9)+'<br /> UbicaciÃ³n: '+ub+' </div>';
+     // $("#response").append(salida);  
+		video_s.push(salida);      
 		if(response1.result.items[0].recordingDetails){
 			console.log("item mapa"+response1.result.items[0].recordingDetails);
 			console.log(response1.result.items[0].recordingDetails.location.longitude);
@@ -268,6 +207,8 @@ function localiza(item){
 	
 	
  });
+ // console.log(video_s.length);
+ //siguiente();
 	
 }
 function marcador(lat2,long2,titulo){
@@ -349,29 +290,7 @@ function mostrarTwitter(response){
 console.log(response);
 console.log("si mostrar "+response.statuses.length);
 
-/*$.each(response, function (index, tweet) {
-						$tweets = $('.tweet').first().clone();
 
-						$tweets.find('.img').attr('src',tweet.statuses[i].user.profile_background_image_url);
-						$tweets.find('.name').text(tweet.statuses[i].user.screen_name);
-						$tweets.find('.username').html("<a target='blank_' href='http://twitter.com/"+tweet.screen_name+"'>"+tweet.screen_name+"</a>");
-						$tweets.find('.date').text((tweet.statuses[i].user.created_at).substring(0, (tweet.statuses[i].user.created_at).length - 5));
-						$tweets.find('.text').text(tweet.statuses[i].text);
-
-						
-						//url_imagen=response.statuses[i].user.profile_background_image_url;
-			/*screen_name =response.statuses[i].user.screen_name;
-			
-			fecha = "<center><h4>"+response.statuses[i].user.created_at+"</h4>";
-			texto ="<center><h4>"+response.statuses[i].text+"</h4>";
-			name = "<a href='https://twitter.com/"+screen_name+"' target=_blank>@"+screen_name+"</a>";
-			
-			imagen ="<center><h4>"+name+" <a href='https://twitter.com/"+screen_name+"' target=_blank><img width='30px' height='30px' src="+url_imagen+"></img></a></h4>";
-            console.log("texto"+texto);
-						
-						$tweets.hide().appendTo('#tweets').fadeIn();
-
-					})*/
 for (var i = 0; i <=response.statuses.length; i++) {
 	console.log("si for");
  // var texto = '<img style="width:30px; height: 30px" src= "'+ response.statuses[i].user.profile_background_image_url + '"class="circle">' + response.statuses[i].text
