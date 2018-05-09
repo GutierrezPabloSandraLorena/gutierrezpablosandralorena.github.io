@@ -344,23 +344,34 @@ function marcadorTwitter(lat2,long2,titulo,imagen){
   var pos= {lat: lat2, lng: long2};
 		console.log("pos");
 		map.addListener('click', function(event) {
-          addMarkerTwitter(event.latLng);
+          //addMarker(event.latLng);
+		   addMarkerTwitter({
+              coords:{lat:parseFloat(lat2), lng:parseFloat(long2)},
+              iconImage: 'js/twitter.png',
+              //content: '<p>' + data.statuses[i].text + '</p>' + '<p>' + data.statuses[i].place.full_name + '</p>'
+          });
         });
-		addMarkerTwitter(pos,titulo,imagen);
+		//addMarker(pos,titulo,imagen);
+		addMarkerTwitter({
+              coords:{lat:parseFloat(lat2), lng:parseFloat(long2)},
+              iconImage: 'js/twitter.png',
+              //content: '<p>' + data.statuses[i].text + '</p>' + '<p>' + data.statuses[i].place.full_name + '</p>'
+          });
 }
 
       // Adds a marker to the map and push to the array.
-function addMarkerTwitter(location,titulo,imagen) {
-	console.log("location");
-	var message = titulo+" Ubicacion: "+location+"<img src="+imagen+"/>";
+function addMarkerTwitter(/*location,titulo,imagen*/props) {
+	//console.log("location");
+	var message = " Ubicacion: "+/*location*/props.coords,+"<img src="+props.iconImage+"/>";
 	var infowindow=new google.maps.InfoWindow();
 	
     var marker = new google.maps.Marker({
-          position: location,
+          position: props.coords,//location,
 		map: map,
-	center:location,
-		  title:'titulo',
-	    iconImage: 'js/twitter.png'
+	center:props.coords,//location,
+		  //title:'titulo',
+		  iconImage: 'js/twitter.png'
+		  
 		  /*icon:{
 			  path:google.maps.SymbolPath.CIRCLE,
 			  scale:10,
@@ -370,11 +381,15 @@ function addMarkerTwitter(location,titulo,imagen) {
 			  fillOpacity:1
 		  }*/
     });
-	marker.setIcon(iconImage);
+	//marker.setIcon(iconImage);
 	
+	 if(props.iconImage){
+          marker.setIcon(props.iconImage);
+        }
+        
 	google.maps.event.addListener(marker,'click',(function(marker){
 		return function(){
-			infowindow.setContent(mensaje);
+			//infowindow.setContent(mensaje);
 			infowindow.open(map,marker);
 		}
 	})(marker));
