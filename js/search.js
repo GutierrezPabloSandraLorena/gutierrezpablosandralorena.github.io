@@ -344,9 +344,9 @@ function marcadorTwitter(lat2,long2,titulo,imagen){
   var pos= {lat: lat2, lng: long2};
 		console.log("pos");
 		map.addListener('click', function(event) {
-          addMarker(event.latLng);
+          addMarkerTwitter(event.latLng);
         });
-		addMarker(pos,titulo,imagen);
+		addMarkerTwitter(pos,titulo,imagen);
 }
 
       // Adds a marker to the map and push to the array.
@@ -359,7 +359,8 @@ function addMarkerTwitter(location,titulo,imagen) {
           position: location,
 		map: map,
 	center:location,
-		  title:'titulo'
+		  title:'titulo',
+	    iconImage: 'js/twitter.png'
 		  /*icon:{
 			  path:google.maps.SymbolPath.CIRCLE,
 			  scale:10,
