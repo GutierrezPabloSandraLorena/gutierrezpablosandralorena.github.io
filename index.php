@@ -30,8 +30,8 @@
 		</div>
 <!--<div class="col s6 l12" >
 				</div>-->
-		<div class="input-field col s3 m12 l12">
-		 <div class="container col s12 m6 l3" >
+		<div class="input-field col s3 m6 l12">
+		 <div class="container" >
 		  <div id="izq">
 		  <div class="row" id="resultados">
 				 
@@ -39,15 +39,20 @@
 			
 		</div>
 		</div>
-		<div id="izq" class="input-field col s3 m12 l12">
-		<div class="container" id="response">
+		<div id="izq" class="input-field col s3 m6 l12">
+		<div class="container" >
+		<div class="row" id="response">
+				 
+			</div>
 		</div>
         
 		</div>
 		<center>
-		<button id="prev" type="button" class="btn purple" onclick="prevPage()" disabled>Anterior</button>
-		<button id="next" type="button" class="btn purple" onclick="nextPage()" disabled>Siguiente</button>
+		<button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
+		<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
 		</center>
+		
+		
 		
 		
     <div class="container col s6 l12" id="map"></div>
