@@ -370,6 +370,7 @@ function addMarkerTwitter(location,titulo,imagen) {
 			  fillOpacity:1
 		  }*/
     });
+	marker.setIcon(iconImage);
 	
 	google.maps.event.addListener(marker,'click',(function(marker){
 		return function(){
