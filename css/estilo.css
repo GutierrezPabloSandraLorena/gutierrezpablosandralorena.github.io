@@ -88,7 +88,7 @@ float: right;
         padding: 0;
       }
 	  #izq{
-                float: left;
+                /*float: left;*/
                 background: Bisque;
             }
 #otro{
