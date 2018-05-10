@@ -33,7 +33,7 @@
 	</div><br/>
 <!--<div class="col s6 l12" >
 				</div>-->
-	<div class="input-field col s3 m6 l12">
+	<!--<div class="input-field col s3 m6 l12">
 		 <div class="container" >
 		  	<div id="izq">
 		  		<div class="row" id="resultados">
@@ -42,7 +42,7 @@
 			
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<div id="izq" class="input-field col s3 m6 l12">
 		<div class="container" >
 			<div class="row" id="response">
