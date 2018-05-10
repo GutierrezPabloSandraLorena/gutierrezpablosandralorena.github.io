@@ -20,41 +20,42 @@
     <body>
 	    <!-- col s6 l12-->
 	     <div class="container" id="map"></div>
-		<div class="input-field col s3 m12 l12" id="fl">
+	<div class="input-field col s3 m12 l12" id="fl">
 		
 			<!--<center>-->
 		<h3>BÚSQUEDA DE LIBROS/VIDEOS/MAPA </br>BOOKS+YOUTUBE+MAPS API GOOGLE<h3>
 		<div id="busqueda" class="#f5f5f5 grey lighten-4 z-depth-5 col s3 m12 l12">
-        <input id="query" placeholder="Ingresa palabra a buscar" class="input-field" value="" type="text" required/>
-		<input id="num" value="" class="input-field" placeholder="Número de resultados" required type="number"/>
-        </div>
+        		<input id="query" placeholder="Ingresa palabra a buscar" class="input-field" value="" type="text" required/>
+			<input id="num" value="" class="input-field" placeholder="Número de resultados" required type="number"/>
+        	</div>
 		<button id="boton" type="button" class="btn purple" onclick="busquedaLibro('','')">Search</button>
 		<!--</center>-->
-		</div>
+	</div><br/>
 <!--<div class="col s6 l12" >
 				</div>-->
-		<div class="input-field col s3 m6 l12">
+	<div class="input-field col s3 m6 l12">
 		 <div class="container" >
-		  <div id="izq">
-		  <div class="row" id="resultados">
+		  	<div id="izq">
+		  		<div class="row" id="resultados">
 				 
-			</div>
+				</div>
 			
+			</div>
 		</div>
-		</div>
-		<div id="izq" class="input-field col s3 m6 l12">
+	</div>
+	<div id="izq" class="input-field col s3 m6 l12">
 		<div class="container" >
-		<div class="row" id="response">
+			<div class="row" id="response">
 				 
 			</div>
 		</div>
         
-		</div>
+	
 		<center>
 		<button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
 		<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
 		</center>
-		
+	</div>	
 		
 		
 		
