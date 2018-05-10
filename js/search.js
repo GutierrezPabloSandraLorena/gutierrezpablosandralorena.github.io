@@ -59,7 +59,7 @@ function busquedaLibro(dir,dir2){
 
 	//if(dir=="")
 	//{
-		dir= "https://www.googleapis.com/books/v1/volumes?maxResults=10&q=" + palabra1+"&key=AIzaSyDe4GeE6Tdv4rVz3BR7dv1QC35HMsOoTJQ";
+		dir= "https://www.googleapis.com/books/v1/volumes?maxResults="+num1+"&q=" + palabra1+"&key=AIzaSyDe4GeE6Tdv4rVz3BR7dv1QC35HMsOoTJQ";
 	//}
 	console.log(dir);
 	$.ajax({
