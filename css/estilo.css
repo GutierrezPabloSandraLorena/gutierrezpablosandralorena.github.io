@@ -51,6 +51,7 @@ boton{
 #resultados{
 	/*margin-top:50px;*/
 	/*overflow: auto;*/
+	 float: left;
 }
 #imagen{
 	width:30px;
@@ -58,6 +59,7 @@ boton{
 }
  #response {
 	 background: Bisque;
+	 float: left;
 	/*width:100%;*/
       }
 /* Always set the map height explicitly to define the size of the div
@@ -67,7 +69,7 @@ boton{
  width: 93%;
  margin: 10px;*/
 float: left;
-		   height: 360px;
+		   height: 200px;
  width: 50%;
  margin: 30px;
 		  
@@ -86,7 +88,7 @@ float: right;
         padding: 0;
       }
 	  #izq{
-                /*float: left;*/
+                float: left;
                 background: Bisque;
             }
 #otro{
