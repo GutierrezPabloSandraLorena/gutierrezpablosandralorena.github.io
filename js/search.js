@@ -359,10 +359,10 @@ function marcadorTwitter(lat2,long2,titulo,imagen){
           });
 }
 
-      // Adds a marker to the map and push to the array.
-function addMarkerTwitter(/*location,titulo,imagen*/props) {
+      // Adds a marker to the map and push to the array.    /*location,titulo,imagen*/
+function addMarkerTwitter(props) {
 	//console.log("location");  /*location*/
-	var message = " Ubicacion: "+props.coords,+"<img src="+props.iconImage+"/>";
+	var message = "Ubicacion: "+props.coords+"<img src="+props.iconImage+"/>";
 	var infowindow=new google.maps.InfoWindow();
 	
     var marker = new google.maps.Marker({
