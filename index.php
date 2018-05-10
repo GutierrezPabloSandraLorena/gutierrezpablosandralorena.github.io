@@ -20,7 +20,7 @@
     <body>
 	    <!-- col s6 l12-->
 	     <div class="container" id="map"></div>
-		<div class="input-field col s3 m12 l12" >
+		<div class="input-field col s3 m12 l12" id="fl">
 		
 			<center>
 		<h3>BÚSQUEDA DE LIBROS/VIDEOS/MAPA </br>BOOKS+YOUTUBE+MAPS API GOOGLE<h3>
