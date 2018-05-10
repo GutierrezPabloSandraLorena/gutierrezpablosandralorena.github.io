@@ -165,11 +165,11 @@ function localiza(item){
                      console.log(response1.result);
 					 console.log("items"+response1.result.items);
      var latitud; var longitud; var ub='no encontrada';
-     var alto=800; var ancho=1000; //var markers = [];
+     var alto=100; var ancho=200; //var markers = [];
  //height:800px;
 	//width:1000px;	
 	var num=document.getElementById('num').value;
-       if(num==2){alto=600; ancho=ancho/2;}  
+       if(num==2){alto=70; ancho=ancho/2;}  
        if(num==3){
 		   ancho=ancho/2;
 	   alto=alto/2;
