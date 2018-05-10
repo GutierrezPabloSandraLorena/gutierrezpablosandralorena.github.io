@@ -361,8 +361,8 @@ function marcadorTwitter(lat2,long2,titulo,imagen){
 
       // Adds a marker to the map and push to the array.
 function addMarkerTwitter(/*location,titulo,imagen*/props) {
-	//console.log("location");
-	var message = " Ubicacion: "+/*location*/props.coords,+"<img src="+props.iconImage+"/>";
+	//console.log("location");  /*location*/
+	var message = " Ubicacion: "+props.coords,+"<img src="+props.iconImage+"/>";
 	var infowindow=new google.maps.InfoWindow();
 	
     var marker = new google.maps.Marker({
