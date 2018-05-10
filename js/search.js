@@ -72,7 +72,7 @@ function busquedaLibro(dir,dir2){
 			d.setAttribute("backgroundColor", "Bisque");
 			//for(i=0;i<datos.items.length;i++){
 				var i=0;
-				while (i<num1 && i<10){
+				while (i<num1){
 				titulo="<center><h4>"+datos.items[i].volumeInfo.title+"</h4>";
 				subtitulo="<h6>"+datos.items[i].volumeInfo.subtitle+"</h6>";
 				autor="<h5> Autor:"+ datos.items[i].volumeInfo.authors + "</h5>";
