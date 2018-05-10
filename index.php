@@ -18,8 +18,9 @@
 		<title>MASHUP</title>
     </head>
     <body>
-	     <div class="container col s6 l12" id="map"></div>
-		<div class="input-field col s3 m12 l12" id="fl">
+	    <!-- col s6 l12-->
+	     <div class="container" id="map"></div>
+		<div class="input-field col s3 m12 l12" >
 		
 			<center>
 		<h3>BÚSQUEDA DE LIBROS/VIDEOS/MAPA </br>BOOKS+YOUTUBE+MAPS API GOOGLE<h3>
