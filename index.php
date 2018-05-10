@@ -57,7 +57,7 @@
 		
     <div class="container col s6 l12" id="map"></div>
 		
-			<div class="input-field col s6 m6 6">
+			<div class="input-field col s3 m3 6">
 		<!--<div class="container col s3 m6 l3" >-->
 			<div id="izq">
 			<div class="row" id="tweet">
