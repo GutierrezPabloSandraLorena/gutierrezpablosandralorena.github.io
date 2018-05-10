@@ -64,8 +64,15 @@ boton{
        * element that contains the map. */
 	  #map {
  height: 200px;
- width: 93%p;
+ width: 93%;
  margin: 10px;
+float: left;
+		  
+      }
+#fl {
+ /*height: 200px;
+ width: 93%;
+ margin: 10px;*/
 float: left;
       }
       /* Optional: Makes the sample page fill the window. */
