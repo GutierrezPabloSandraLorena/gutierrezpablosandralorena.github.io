@@ -18,8 +18,10 @@
 		<title>MASHUP</title>
     </head>
     <body>
-		<div class="input-field col s3 m12 l12">
-		<center>
+	     <div class="container col s6 l12" id="map"></div>
+		<div class="input-field col s3 m12 l12" id="fl">
+		
+			<center>
 		<h3>BÚSQUEDA DE LIBROS/VIDEOS/MAPA </br>BOOKS+YOUTUBE+MAPS API GOOGLE<h3>
 		<div id="busqueda" class="#f5f5f5 grey lighten-4 z-depth-5 col s3 m12 l12">
         <input id="query" placeholder="Ingresa palabra a buscar" class="input-field" value="" type="text" required/>
@@ -55,7 +57,7 @@
 		
 		
 		
-    <div class="container col s6 l12" id="map"></div>
+   
 		
 			<div class="input-field col s3 m3 6">
 		<!--<div class="container col s3 m6 l3" >-->
