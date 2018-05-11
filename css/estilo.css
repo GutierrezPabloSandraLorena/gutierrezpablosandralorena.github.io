@@ -69,8 +69,8 @@ boton{
 	  #map {
 /* height: 200px;
  width: 93%;
- margin: 10px;*/
-float: left;
+ margin: 10px;
+float: left;*/
 		   height: 200px;
  width: 50%;
  margin: 30px;
@@ -80,8 +80,8 @@ float: left;
 #fl {
  /*height: 200px;
  width: 93%;
- margin: 10px;
-float: right;*/
+ margin: 10px;*/
+float: left;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
