@@ -51,8 +51,8 @@ boton{
 #resultados{
 	/*margin-top:50px;*/
 	/*overflow: auto;*/
-	/*float:none;*/
-	clear:both;
+	float:left;
+	/*clear:both;*/
 }
 #imagen{
 	width:30px;
@@ -61,8 +61,8 @@ boton{
  #response {
 	 background: Bisque;
 	/* float: right;*/
-	/*width:100%;*/
-	 clear:both;
+	/*width:100%;
+	 clear:both;*/
       }
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
