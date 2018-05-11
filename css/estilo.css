@@ -51,7 +51,7 @@ boton{
 #resultados{
 	/*margin-top:50px;*/
 	/*overflow: auto;*/
-	float:none;
+	/*float:none;*/
 }
 #imagen{
 	width:30px;
@@ -59,7 +59,7 @@ boton{
 }
  #response {
 	 background: Bisque;
-	 float: left;
+	 float: right;
 	/*width:100%;*/
       }
 /* Always set the map height explicitly to define the size of the div
