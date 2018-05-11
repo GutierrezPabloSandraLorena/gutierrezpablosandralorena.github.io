@@ -19,7 +19,7 @@
     </head>
     <body>
 	    <!-- col s6 l12-->
-	     <div class="container" id="map"></div>
+	    
 	<div class="input-field col s3 m12 l12" id="fl">
 		
 			<!--<center>-->
@@ -30,7 +30,8 @@
         	</div>
 		<button id="boton" type="button" class="btn purple" onclick="busquedaLibro('','')">Search</button>
 		<!--</center>-->
-	</div><br/>
+	</div>
+		 <div class="container" id="map"></div>
 <!--<div class="col s6 l12" >
 				</div>-->
 	<!--<div class="input-field col s3 m6 l12">
