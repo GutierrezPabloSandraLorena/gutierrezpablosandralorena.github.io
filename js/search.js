@@ -73,11 +73,11 @@ function busquedaLibro(dir,dir2){
 			//for(i=0;i<datos.items.length;i++){
 				var i=0;
 				while (i<num1){
-				titulo="<center><h4>"+datos.items[i].volumeInfo.title+"</h4>";
+				titulo="<center><h5>"+datos.items[i].volumeInfo.title+"</h5>";
 				subtitulo="<h6>"+datos.items[i].volumeInfo.subtitle+"</h6>";
 				autor="<h5> Autor:"+ datos.items[i].volumeInfo.authors + "</h5>";
 				//resultados.innerHTML+=titulo;
-				libro='<div class="col s3 m3 6">'+titulo;
+				libro='<div class="col s3 m3 12">'+titulo;
 				//console.log(subtitulo);
 				if(datos.items[i].volumeInfo.subtitle!=""){
 				//resultados.innerHTML+=subtitulo;
