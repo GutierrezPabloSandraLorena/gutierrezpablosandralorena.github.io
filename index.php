@@ -23,12 +23,13 @@
 	<div class="input-field col s3 m12 l12" id="fl">
 		
 			<!--<center>-->
-		<h5>BÚSQUEDA DE LIBROS/VIDEOS/MAPA </br>BOOKS+YOUTUBE+MAPS API GOOGLE<h5>
+		<h4>BÚSQUEDA DE LIBROS/VIDEOS/MAPA <br/>BOOKS+YOUTUBE+MAPS API GOOGLE<h4>
 		<div id="busqueda" class="#f5f5f5 grey lighten-2 z-depth-3 col s3 m12 l12">
         		<input id="query" placeholder="Ingresa palabra a buscar" class="input-field" value="" type="text" required/>
 			<input id="num" value="" class="input-field" placeholder="Número de resultados" required type="number"/>
-        	</div>
-		<button id="boton" type="button" class="btn purple" onclick="busquedaLibro('','')">Search</button>
+        		<button id="boton" type="button" class="btn purple" onclick="busquedaLibro('','')">Search</button>
+		</div>
+		
 		<!--</center>-->
 	</div>
 		 <div class="container" id="map"></div>
