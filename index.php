@@ -20,10 +20,18 @@
     <body>
 	    <!-- col s6 l12-->
 	    
+	    
+	    <div class="input-field col s3 m12 l12">
+		
+		<center>
+		<h3>BÚSQUEDA DE LIBROS/VIDEOS/MAPA <br/>BOOKS+YOUTUBE+MAPS API GOOGLE<h3>
+		</center>
+	</div>
+	    
+	    
 	<div class="input-field col s3 m12 l12" id="fl">
 		
 			<!--<center>-->
-		<h4>BÚSQUEDA DE LIBROS/VIDEOS/MAPA <br/>BOOKS+YOUTUBE+MAPS API GOOGLE<h4>
 		<div id="busqueda" class="#f5f5f5 grey lighten-2 z-depth-3 col s3 m12 l12">
         		<input id="query" placeholder="Ingresa palabra a buscar" class="input-field" value="" type="text" required/>
 			<input id="num" value="" class="input-field" placeholder="Número de resultados" required type="number"/>
