@@ -58,6 +58,9 @@ boton{
 	width:30px;
 	height:30px;
 }
+#bo{
+	 clear:both;
+}
  #response {
 	 background: Bisque;
 	/* float: right;*/
