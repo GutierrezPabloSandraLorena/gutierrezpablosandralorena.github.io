@@ -26,7 +26,10 @@ background-color: blue;
 #tweet{
  border-style:solid;
 border:1px;
-border-color:#FFFFFF;/*
+border-color:#FFFFFF;
+width:100px;
+	height:70px;
+	/*
 	border-top-width: 10px;
   border-right-width: 1em;
   border-bottom-width: thick;
@@ -53,8 +56,8 @@ boton{
 	/*overflow: auto;*/
 	/*float:left;
 	clear:both;*/
-	width:40px;
-	height:50px;
+	height: 200px;
+ width: 50%;
 }
 #imagen{
 	width:30px;
@@ -65,6 +68,8 @@ boton{
 }
  #response {
 	 background: Bisque;
+	 height: 200px;
+ width: 50%;
 	/* float: right;*/
 	/*width:100%;
 	 clear:both;*/
