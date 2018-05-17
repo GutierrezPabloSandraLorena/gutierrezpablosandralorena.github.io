@@ -43,7 +43,7 @@
 		 <div class="container" id="map"></div>
 <!--<div class="col s6 l12" >
 				</div>-->
-	<div class="input-field col s3 m3 l12" id="ri">
+	<div class="input-field col s3 m3 l12" id="fl">
 		 <div class="container" >
 		  	<div id="izq">
 		  		<div class="row" id="resultados">
