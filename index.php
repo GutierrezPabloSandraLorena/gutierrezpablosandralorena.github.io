@@ -52,10 +52,10 @@
 		</div>
         
 	
-		<center>
+		<!--<center>-->
 		<button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
 		<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
-		</center>
+		<!--</center>-->
 	</div>	
 
 			
