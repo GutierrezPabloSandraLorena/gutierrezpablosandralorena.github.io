@@ -41,6 +41,14 @@
 		<!--</center>-->
 	</div>
 		 <div class="container" id="map"></div>
+			<div class="input-field col s3 m3 6" id="ri">
+		<!--<div class="container col s3 m6 l3" >-->
+			<div id="izq">
+			<div class="row" id="tweet">
+		<!--</div>-->
+		</div>
+			</div>
+		</div> 
 <!--<div class="col s6 l12" >
 				</div>-->
 	<div id="izq" class="input-field col s3 m3 l12" id="fl">
@@ -73,14 +81,7 @@
 		
    
 		
-			<div class="input-field col s3 m3 6">
-		<!--<div class="container col s3 m6 l3" >-->
-			<div id="izq">
-			<div class="row" id="tweet">
-		<!--</div>-->
-		</div>
-			</div>
-		</div> 
+			
 			
 			<!--<div class="input-field col s3 m12 l12">
 		 <div class="container col s12 m6 l3" >
@@ -90,9 +91,9 @@
 			</div>
 			
 		</div>
-		</div> -->
+		</div> 
 		<div id="tweet1">
-		</div>
+		</div>-->
 	
 		
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
