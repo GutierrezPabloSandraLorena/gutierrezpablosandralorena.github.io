@@ -88,6 +88,12 @@ float: left;*/
  margin: 10px;*/
 float: left;
       }
+#ri {
+ /*height: 200px;
+ width: 93%;
+ margin: 10px;*/
+float: right;
+      }
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
