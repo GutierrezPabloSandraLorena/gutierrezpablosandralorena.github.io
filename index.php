@@ -54,7 +54,7 @@ class="input-field col s3 m3 l12"
 			
 			<div id="bo"></div>
 			
-	<div id="fl" class="input-field col s3 m3 l12">
+	<div id="fl" >
 		<button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
 				<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
 			<div id="response">
