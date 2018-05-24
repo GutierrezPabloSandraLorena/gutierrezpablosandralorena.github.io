@@ -43,7 +43,7 @@
 class="input-field col s3 m3 l12" 
 -->
 	</div>
-		 <div class="container" id="map"></div>
+		 <div class="container" id="map" style="float:left;></div>
 			<div id="fl">
 				<div id="tweet">
 				</div>
