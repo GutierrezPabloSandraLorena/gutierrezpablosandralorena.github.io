@@ -46,7 +46,7 @@ class="input-field col s3 m3 l12"
 		 <div class="container" id="map" style="float:left;"></div>
 			
 				
-		<div id="fl" class="input-field col s3 m12 l12">
+		<div id="fl" class="input-field col s3 m3 l12">
 				<div id="tweet">
 				</div>
 		</div>
@@ -54,19 +54,19 @@ class="input-field col s3 m3 l12"
 			
 			<div id="bo"></div>
 			
-	<div id="fl" class="input-field col s6 m6 l12">
+	<div id="fl" class="input-field col s3 m3 l12">
 		<button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
 				<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
-			<div class="row" id="response">
+			<div id="response">
 				 
 			</div>
 		
 	</div>	
 
 			
-	<div class="input-field col s6 m6 l12" >
+	<div class="input-field col s3 m3 l12" >
 		 <!--<div class="container" > class="row"  class="input-field col s6 m6 l12"-->
-		  		<div class="row" id="resultados">
+		  		<div id="resultados">
 				 
 				</div>
 		<!--</div> class="input-field col s6 m6 6" class="row" -->
