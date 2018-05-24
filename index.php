@@ -47,9 +47,10 @@
  class="input-field col s3 m3 l12" 
 <div class="input-field col s3 m3 l12" >
 </div>-->
+			<!--class="row"-->
 	<div id="izq" id="fl" class="input-field col s3 m3 l12" >
 		<!--<div class="container" >-->
-			<div class="row" id="response">
+			<div  id="response">
 				 
 			</div>
 		<!--</div>-->
