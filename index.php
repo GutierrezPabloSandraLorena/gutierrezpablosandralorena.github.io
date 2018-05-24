@@ -46,7 +46,7 @@ class="input-field col s3 m3 l12"
 		 <div class="container" id="map"></div>
 			<div id="bo"></div>
 			
-	<div >
+	<div id="fl" >
 		<button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
 				<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
 			<div  id="response">
@@ -63,7 +63,7 @@ class="input-field col s3 m3 l12"
 				</div>
 		<!--</div> class="input-field col s6 m6 6" class="row" -->
 	</div>
-			
+		<div id="bo"></div>	
 		<!--<div id="ri">-->
 
 			<div id="izq">
