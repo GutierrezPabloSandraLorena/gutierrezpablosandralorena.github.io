@@ -46,7 +46,7 @@ class="input-field col s3 m3 l12"
 		 <div class="container" id="map"></div>
 			<div id="bo"></div>
 			
-	<div id="fl" >
+	<div >
 			<div  id="response">
 				 <button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
 				<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
