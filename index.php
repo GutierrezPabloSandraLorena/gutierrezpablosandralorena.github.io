@@ -47,12 +47,12 @@
  class="input-field col s3 m3 l12" 
 <div class="input-field col s3 m3 l12" >
 </div>-->
-	<div id="izq" id="fl">
-		<div class="container" >
+	<div id="izq" id="fl" class="input-field col s3 m3 l12" >
+		<!--<div class="container" >-->
 			<div class="row" id="response">
 				 
 			</div>
-		</div>
+		<!--</div>-->
         
 	
 		<!--<center>-->
@@ -62,16 +62,16 @@
 	</div>	
 
 			
-			
-		 <div class="container" >
+			<div class="input-field col s3 m3 l12" >
+		 <!--<div class="container" >-->
 		  	<div id="izq">
 		  		<div class="row" id="resultados">
 				 
 				</div>
 			
 			</div>
-		</div>
-	
+		<!--</div>-->
+	</div>
 			
 		<div class="input-field col s3 m3 6" id="ri">
 		<!--<div class="container col s3 m6 l3" >-->
@@ -95,6 +95,7 @@
 			
 		</div>
 		</div> 
+
 		<div id="tweet1">
 		</div>-->
 	
