@@ -61,7 +61,7 @@ class="input-field col s3 m3 l12" class="input-field col s3 m3 l12"
 			</div>
 		
 	</div>	
-	<div id="fl">
+	<div>
 		 <!--<div class="container" > class="row"  class="input-field col s6 m6 l12"-->
 		  		<div id="resultados">
 				 
