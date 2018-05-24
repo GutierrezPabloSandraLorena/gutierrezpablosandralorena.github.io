@@ -42,22 +42,7 @@
 	</div>
 		 <div class="container" id="map"></div>
 			<div id="bo"></div>
-<!--<div class="col s6 l12" >
-				</div>
- class="input-field col s3 m3 l12" 
-<div class="input-field col s3 m3 l12" >
-</div>-->
-			<!--class="row"
-<div id="fl" class="input-field col s3 m3 l12" >
-		<div class="container" >
-			<div  id="response">
-				 
-			</div>
-		
-		<button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
-		<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
-	</div>	
--->
+			
 	<div id="fl" class="input-field col s3 m3 l12" >
 			<div  id="response">
 				 
@@ -67,7 +52,7 @@
 	</div>	
 
 			
-			<div class="input-field col s3 m3 l12" >
+	<div class="input-field col s6 m6 l12" >
 		 <!--<div class="container" > class="row"-->
 		  		<div  id="resultados">
 				 
@@ -75,12 +60,11 @@
 		<!--</div>-->
 	</div>
 			
-		<div class="input-field col s3 m3 6" id="ri">
-		<!--<div class="container col s3 m6 l3" >-->
+		<div class="input-field col s6 m6 6" id="ri">
+
 			<div id="izq">
-			<div class="row" id="tweet">
-		<!--</div>-->
-		</div>
+				<div class="row" id="tweet">
+				</div>
 			</div>
 		</div> 
 		
@@ -101,7 +85,11 @@
 		<div id="tweet1">
 		</div>-->
 	
-		
+		<!--<div class="col s6 l12" >
+				</div>
+ class="input-field col s3 m3 l12" 
+<div class="input-field col s3 m3 l12" >
+</div>-->
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 		
 		<script src="https://apis.google.com/js/client.js"></script>
