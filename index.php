@@ -38,29 +38,32 @@
         		<button id="boton" type="button" class="btn purple" onclick="busquedaLibro('','')">Search</button>
 		</div>
 		
-		<!--</center>-->
+		<!--</center>
+
+class="input-field col s3 m3 l12" 
+-->
 	</div>
 		 <div class="container" id="map"></div>
 			<div id="bo"></div>
 			
-	<div id="fl" class="input-field col s3 m3 l12" >
+	<div id="fl" >
 			<div  id="response">
-				 
+				 <button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
+				<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
 			</div>
-		<button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
-		<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
+		
 	</div>	
 
 			
-	<div class="input-field col s6 m6 l12" >
-		 <!--<div class="container" > class="row"-->
+	<div  >
+		 <!--<div class="container" > class="row"  class="input-field col s6 m6 l12"-->
 		  		<div  id="resultados">
 				 
 				</div>
-		<!--</div>-->
+		<!--</div> class="input-field col s6 m6 6" -->
 	</div>
 			
-		<div class="input-field col s6 m6 6" id="ri">
+		<div id="ri">
 
 			<div id="izq">
 				<div class="row" id="tweet">
