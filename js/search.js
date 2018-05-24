@@ -77,7 +77,7 @@ function busquedaLibro(dir,dir2){
 				subtitulo="<h6>"+datos.items[i].volumeInfo.subtitle+"</h6>";
 				autor="<h5> Autor:"+ datos.items[i].volumeInfo.authors + "</h5>";
 				//resultados.innerHTML+=titulo;
-				libro='<div /*class="col s3 m3 12"*/>'+titulo;
+				libro='<div class="col s3 m3 12">'+titulo;
 				//console.log(subtitulo);
 				if(datos.items[i].volumeInfo.subtitle!=""){
 				//resultados.innerHTML+=subtitulo;
@@ -189,7 +189,7 @@ function localiza(item){
 	 // <div class="video-container">  width='+ancho+'px height='+alto+'px  class="video-container"
 	  
     ide=item.id.videoId;   
-     salida='<div id="izq" /*class="col s3 m3 3"*/><iframe  width='+ancho+'px height='+alto+'px src=\"//www.youtube.com/embed/'+item.id.videoId+'\" allowfullscreen></iframe></br>CANAL: '+item.snippet.channelTitle+'<br />FECHA DE PUBLICACION: '+item.snippet.publishedAt.substr(0, 9)+'<br /> UbicaciÃ³n: '+ub+' </div>';
+     salida='<div id="izq" class="col s3 m3 3"><iframe  width='+ancho+'px height='+alto+'px src=\"//www.youtube.com/embed/'+item.id.videoId+'\" allowfullscreen></iframe></br>CANAL: '+item.snippet.channelTitle+'<br />FECHA DE PUBLICACION: '+item.snippet.publishedAt.substr(0, 9)+'<br /> UbicaciÃ³n: '+ub+' </div>';
      // $("#response").append(salida);  
 		video_s.push(salida);      
 		if(response1.result.items[0].recordingDetails){
