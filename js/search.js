@@ -189,7 +189,7 @@ function localiza(item){
 	 // <div class="video-container">  width='+ancho+'px height='+alto+'px  class="video-container"<div id="izq" /*class="col s3 m3 3"*/>
 	  
     ide=item.id.videoId;   
-     salida='<div /*class="col s3 m3 12" */style="float:left"><iframe  width='+ancho+'px height='+alto+'px src=\"//www.youtube.com/embed/'+item.id.videoId+'\" allowfullscreen></iframe></br>CANAL: '+item.snippet.channelTitle+'<br />FECHA DE PUBLICACION: '+item.snippet.publishedAt.substr(0, 9)+'<br /> UbicaciÃ³n: '+ub+'</div>';
+     salida='<iframe  width='+ancho+'px height='+alto+'px src=\"//www.youtube.com/embed/'+item.id.videoId+'\" allowfullscreen></iframe></br>CANAL: '+item.snippet.channelTitle+'<br />FECHA DE PUBLICACION: '+item.snippet.publishedAt.substr(0, 9)+'<br /> UbicaciÃ³n: '+ub;
      // $("#response").append(salida);  
 		video_s.push(salida);      
 		if(response1.result.items[0].recordingDetails){
