@@ -59,7 +59,7 @@ boton{
 	/*float:left;
 	clear:both;*/
 	height: 200px;
- width: 50px;
+ width: 50%;
 }
 #imagen{
 	width:30px;
@@ -71,7 +71,7 @@ boton{
  #response {
 	 background: Bisque;
 	 height: 200px;
- width: 50px;
+ width: 50%;
 	/* float: right;*/
 	/*width:100%;
 	 clear:both;*/
