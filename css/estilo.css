@@ -58,7 +58,7 @@ boton{
 	/*overflow: auto;*/
 	/*float:left;
 	clear:both;*/
-	height: 300px;
+	height: 400px;
  width: 50%;
 }
 #imagen{
@@ -70,7 +70,7 @@ boton{
 }
  #response {
 	 background: Bisque;
-	 height: 300px;
+	 height: 400px;
  width: 50%;
 	/* float: right;*/
 	/*width:100%;
