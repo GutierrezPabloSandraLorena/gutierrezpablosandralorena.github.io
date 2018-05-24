@@ -52,12 +52,14 @@ boton{
 	margin-bottom:15px;
 }
 #resultados{
+	 background: Bisque;
+	
 	/*margin-top:50px;*/
 	/*overflow: auto;*/
 	/*float:left;
 	clear:both;*/
 	height: 200px;
- width: 50%;
+ width: 50px;
 }
 #imagen{
 	width:30px;
@@ -69,7 +71,7 @@ boton{
  #response {
 	 background: Bisque;
 	 height: 200px;
- width: 50%;
+ width: 50px;
 	/* float: right;*/
 	/*width:100%;
 	 clear:both;*/
