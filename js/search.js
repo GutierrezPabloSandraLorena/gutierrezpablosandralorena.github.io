@@ -77,7 +77,7 @@ function busquedaLibro(dir,dir2){
 				subtitulo="<h6>"+datos.items[i].volumeInfo.subtitle+"</h6>";
 				autor="<h5> Autor:"+ datos.items[i].volumeInfo.authors + "</h5>";
 				//resultados.innerHTML+=titulo;
-				libro='<div /*class="col s3 m3 12" */style="float:left">'+titulo;
+				libro='<div /*class="col s3 m3 12" style="float:left"*/>'+titulo;
 				//console.log(subtitulo);
 				if(datos.items[i].volumeInfo.subtitle!=""){
 				//resultados.innerHTML+=subtitulo;
