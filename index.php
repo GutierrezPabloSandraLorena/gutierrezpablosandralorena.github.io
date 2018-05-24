@@ -60,16 +60,16 @@ class="input-field col s3 m3 l12"
 		  		<div  id="resultados">
 				 
 				</div>
-		<!--</div> class="input-field col s6 m6 6" -->
+		<!--</div> class="input-field col s6 m6 6" class="row" -->
 	</div>
 			
-		<div id="ri">
+		<!--<div id="ri">-->
 
 			<div id="izq">
-				<div class="row" id="tweet">
+				<div id="tweet">
 				</div>
 			</div>
-		</div> 
+		<!--</div> -->
 		
    
 		
