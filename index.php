@@ -49,19 +49,14 @@
 </div>-->
 			<!--class="row"
 <div id="fl" class="input-field col s3 m3 l12" >
-		<!--<div class="container" >-->
+		<div class="container" >
 			<div  id="response">
 				 
 			</div>
-		<!--</div>-->
-        
-	
-		<!--<center>-->
+		
 		<button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
 		<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
-		<!--</center>-->
 	</div>	
-
 -->
 	<div id="fl" class="input-field col s3 m3 l12" >
 			<div  id="response">
