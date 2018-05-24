@@ -24,7 +24,7 @@
 	    <div class="input-field col s3 m12 l12">
 		
 		<center>
-		<h3>BÚSQUEDA DE LIBROS/VIDEOS/MAPA <br/>BOOKS+YOUTUBE+MAPS API GOOGLE<h3>
+		<h3>BÚSQUEDA DE LIBROS/VIDEOS/MAPA <br/>BOOKS+YOUTUBE+MAPS API GOOGLE +API Twitter<h3>
 		</center>
 	</div>
 	    
