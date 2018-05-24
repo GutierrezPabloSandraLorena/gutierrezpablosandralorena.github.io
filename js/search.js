@@ -165,11 +165,11 @@ function localiza(item){
                      console.log(response1.result);
 					 console.log("items"+response1.result.items);
      var latitud; var longitud; var ub='no encontrada';
-     var alto=100; var ancho=200; //var markers = [];
+     var alto=70; var ancho=100; //var markers = [];
  //height:800px;
 	//width:1000px;	
 	var num=document.getElementById('num').value;
-       if(num==2){alto=70; ancho=ancho/2;}  
+      /* if(num==2){alto=70; ancho=ancho/2;}  
        if(num==3){
 		   ancho=ancho/2;
 	   alto=alto/2;
@@ -179,7 +179,7 @@ function localiza(item){
 	   if(num==5 || num==6){alto=alto/2; ancho=ancho/3;}
 	   if(num==7 || num==8){alto=alto/2; ancho=ancho/4;}
       // if(num==5 || num==6 || num==7 || num==8){alto=alto/3; ancho=ancho/4;}         
-       if(num==9 || num==10 || num>10){alto=alto/3; ancho=ancho/5;}
+       if(num==9 || num==10 || num>10){alto=alto/3; ancho=ancho/5;}*/
   //"snippet": 
       if(response1.result.items[0].recordingDetails){
         longitud = response1.result.items[0].recordingDetails.location.longitude; 
