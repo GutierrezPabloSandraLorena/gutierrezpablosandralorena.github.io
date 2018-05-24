@@ -47,8 +47,8 @@
  class="input-field col s3 m3 l12" 
 <div class="input-field col s3 m3 l12" >
 </div>-->
-			<!--class="row"-->
-	<div id="izq" id="fl" class="input-field col s3 m3 l12" >
+			<!--class="row"
+<div id="fl" class="input-field col s3 m3 l12" >
 		<!--<div class="container" >-->
 			<div  id="response">
 				 
@@ -62,15 +62,21 @@
 		<!--</center>-->
 	</div>	
 
+-->
+	<div id="fl" class="input-field col s3 m3 l12" >
+			<div  id="response">
+				 
+			</div>
+		<button id="prev" type="button" class="btn purple" onclick="anterior()" >Anterior</button>
+		<button id="next" type="button" class="btn purple" onclick="siguiente()" >Siguiente</button>
+	</div>	
+
 			
 			<div class="input-field col s3 m3 l12" >
-		 <!--<div class="container" >-->
-		  	<div id="izq">
-		  		<div class="row" id="resultados">
+		 <!--<div class="container" > class="row"-->
+		  		<div  id="resultados">
 				 
 				</div>
-			
-			</div>
 		<!--</div>-->
 	</div>
 			
